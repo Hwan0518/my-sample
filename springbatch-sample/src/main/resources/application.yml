@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: BatchTest
+
+  # Batch
+  batch:
+    job:
+      enabled: false  # ???? ??
+
+
+  # db1 - MetaData
+  datasource-meta:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3312/meta_db?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+
+  # db2 - Data
+  datasource-data:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3312/data_db?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 1234

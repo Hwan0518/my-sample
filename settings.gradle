@@ -1,1 +1,6 @@
 rootProject.name = 'my-sample-code'
+include 'webclient-sample'
+include 'springbatch-sample'
+include 'layered-sample'
+include 'hexagonal-sample'
+

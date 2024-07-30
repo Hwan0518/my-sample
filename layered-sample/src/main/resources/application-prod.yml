@@ -1,0 +1,55 @@
+server:
+  port: 0
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+#  # 스케쥴러 설정
+#  scheduler:
+#    create_monthly_settle_data_launcher:
+#      cron: ${CREATE_MONTHLY_LAUNCHER_CRON}
+#      zone: ${CREATE_MONTHLY_LAUNCHER_ZONE}
+#    daily_settlement_job_launcher:
+#      cron: ${DAILY_SETTLEMENT_LAUNCHER_CRON}
+#      zone: ${DAILY_SETTLEMENT_LAUNCHER_ZONE}
+#
+#  # 스프링배치 설정
+#  batch:
+#    jdbc:
+#      initialize-schema: always
+#    job:
+#      enabled: false
+#
+#  # 카프카 접속정보 설정
+#  kafka:
+#    bootstrap-servers: ${BOOTSTRAP_SERVERS}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # DB설정
+  datasource:
+    url: ${MASTER_DB_URL}
+    username: ${MASTER_DB_USERNAME}
+    password: ${MASTER_DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+
+## 유레카 설정
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: ${EUREKA_URL}
+#
+#  # 랜덤포트로
+#  instance:
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

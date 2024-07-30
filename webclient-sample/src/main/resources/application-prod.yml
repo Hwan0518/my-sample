@@ -1,0 +1,32 @@
+server:
+  port: 0
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+
+  # Replication 설정
+  datasource:
+    url: ${MASTER_DB_URL}
+    username: ${MASTER_DB_USERNAME}
+    password: ${MASTER_DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 유레카 설정
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URL}
+
+  # 랜덤포트로
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

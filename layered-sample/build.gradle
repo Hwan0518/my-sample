@@ -1,0 +1,34 @@
+//plugins {
+//    id 'java'
+//    id 'org.springframework.boot' version '3.2.1'
+//    id 'io.spring.dependency-management' version '1.1.4'
+//}
+//
+//group = 'gentledog'
+//version = '0.0.1-SNAPSHOT'
+//
+//java {
+//    sourceCompatibility = '17'
+//}
+//
+//configurations {
+//    compileOnly {
+//        extendsFrom annotationProcessor
+//    }
+//}
+//
+//repositories {
+//    mavenCentral()
+//}
+
+dependencies {
+    // maria-db
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+    // Querydsl
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta" // 버전 변경
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+}
