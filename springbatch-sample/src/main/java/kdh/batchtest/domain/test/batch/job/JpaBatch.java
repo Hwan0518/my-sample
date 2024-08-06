@@ -51,7 +51,7 @@ public class JpaBatch {
 	// job을 정의한다
 	@Bean
 	public Job jpaJob() {
-		return new JobBuilder("firstJob", jobRepository)
+		return new JobBuilder("jpaJob", jobRepository)
 			.start(jpaJobStep())
 //			.next() job이 여러 단계라면 next를 사용
 //			.next()
