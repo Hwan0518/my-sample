@@ -35,5 +35,16 @@ public class JpaBatchController {
 	}
 
 
+	@GetMapping("/jpaBatch/Controller/second")
+	public String secondJobBatchApi(@RequestParam("value") String value) throws Exception {
+		log.info("JpaBatchController 실행");
+		// jobParameter
+		JobParameters jobParameters = new JobParametersBuilder()
+			.addString("value", value) // Double, Long, Date, String 타입만 가능
+			.toJobParameters();
+		// jobLauncher
+		jobLauncher.run(jobRegistry.getJob("secondJpaJob"), jobParameters);
+		return "ok";
+	}
 
 }
