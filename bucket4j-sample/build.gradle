@@ -1,0 +1,4 @@
+dependencies {
+    // bucket4j -> 8.13.1은 아직 안됨
+    implementation 'com.bucket4j:bucket4j-core:8.10.1'
+}

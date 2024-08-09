@@ -22,6 +22,10 @@
 //}
 
 dependencies {
+    // spring data jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // spring jdbc
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     // maria-db
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     // swagger
