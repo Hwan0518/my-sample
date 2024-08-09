@@ -6,7 +6,6 @@ import io.github.bucket4j.ConsumptionProbe;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -45,8 +44,6 @@ public class TestApiThrottlingFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
-		// 세션이 존재하면 반환하고, 없으면 새로 생성하기 위해 true를 인수로 전달
-		HttpSession session = request.getSession(true);
 
 		// api 경로에 포함된다면 토큰 사용
 		if (GREEDY_API.contains(request.getRequestURI())) {
