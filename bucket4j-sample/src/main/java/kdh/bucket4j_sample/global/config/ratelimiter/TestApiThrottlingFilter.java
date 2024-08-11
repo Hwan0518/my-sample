@@ -53,9 +53,10 @@ public class TestApiThrottlingFilter implements Filter {
 			log.info("interval bucket 사용");
 			checkApi(intervalBucket, filterChain, servletRequest, servletResponse);
 		}
-
 		// 아니라면 필터 계속 진행
-		filterChain.doFilter(servletRequest, servletResponse);
+		else {
+			filterChain.doFilter(servletRequest, servletResponse);
+		}
 	}
 
 
