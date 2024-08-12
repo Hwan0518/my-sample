@@ -3,4 +3,5 @@ include 'webclient-sample'
 include 'springbatch-sample'
 include 'layered-sample'
 include 'hexagonal-sample'
+include 'bucket4j-sample'
 

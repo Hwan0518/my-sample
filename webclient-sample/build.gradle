@@ -1,4 +1,8 @@
 dependencies {
+    // spring data jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // spring jdbc
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     // mysql
     runtimeOnly 'com.mysql:mysql-connector-j'
     // spring eureka client

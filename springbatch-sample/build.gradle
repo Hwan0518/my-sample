@@ -1,4 +1,8 @@
 dependencies {
+    // spring data jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // spring jdbc
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     // spring batch
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     testImplementation 'org.springframework.batch:spring-batch-test'
