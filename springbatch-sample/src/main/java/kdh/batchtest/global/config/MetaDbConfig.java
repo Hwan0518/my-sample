@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 public class MetaDbConfig {
 
 	@Bean
-	@Primary // DB 두 개를 연결해야 하므로, 충돌 방지를 위해 Primary 사용
+	@Primary // DB 두 개를 연결해야 하므로, 충돌 방지를 위해 Primary 사용 -> @Primary가 붙은 DataSource에 metadata Table이 생성됨
 	@ConfigurationProperties(prefix = "spring.datasource-meta")
 	// prefix에 해당하는 정보로 application.properties에서 정보를 가져와서 DataSource를 생성
 	public DataSource metaDbSource() {

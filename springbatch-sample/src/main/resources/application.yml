@@ -6,7 +6,9 @@ spring:
   batch:
     job:
       enabled: false  # ???? ??
-
+    jdbc:
+      initialize-schema: always # 해당 batch 테이블을 생성할것인가?
+      schema: classpath:/org/springframework/batch/core/schema-mysql.sql # spring이 db에따라 자동으로 설정해주지만, 잘못된 값 방지를 위해 명시적으로 설정
 
   # db1 - MetaData
   datasource-meta:
