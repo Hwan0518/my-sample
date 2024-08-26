@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    default: local
+
+  # MySql
+  datasource:
+      url: jdbc:mysql://localhost:3312/mongodb_sample?useSSL=false&serverTimezone=UTC
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # MongoDB
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mongodb_sample
+
+# swagger
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    display-request-duration: true
+  api-docs:
+    path: /api-docs
+  show-actuator: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  paths-to-match:
+    - /api/v1/**
+
+
+
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
